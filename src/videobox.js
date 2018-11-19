@@ -1,27 +1,82 @@
 import React, { Component } from 'react';
-import YouTube from 'react-youtube';
+
 
 
 class VideoBox extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            children:''
+        };
+        
+    }
+    // handleClick = () => {
+    //     console.log('klik')
+    //     //e.preventDefault()
+    //     console.log(this.state.children)
+    //     if (this.state.children===this.props.child){
+    //         this.setState({
+    //             children:''
+    //         });
+    //     } else {
+    //         this.setState({
+    //             children: this.props.children
+    //         });
+    //     }
+    // }
+    handleClick = () => {
+        console.log('klik')
+        //e.preventDefault()
+        console.log(this.state.children)
+        if (this.state.children===this.props.children){
+            this.setState({
+                children:''
+            });
+        } else {
+            this.setState({
+                children: this.props.children
+            });
+        }
+    }
     render () { 
         return (
-            <div style={{width:'100px', height:'100px'} } className='videobox'>
-                <YouTube
-                    videoId={this.props.videoId}
-                    opts={this.props.opts}
-                    //onReady={this._onReady}
-                />
+        <div className='videoitem' >
+            {this.state.children}
+            <div  className='videobox'>
+                <div> 
+                    <img src={this.props.img} alt="gfg"/>
+                </div>
                 <div className='videodesc'>
                     <h1>{this.props.title}</h1>
                     <p>{this.props.desc}</p>
-                    <button>1</button>
-                    <button>2</button>
-                    <button>3</button>
-                    <button>4</button>
-                    <button>5</button>
+                    <div>
+                        <button className='play' onClick={this.handleClick}>▶</button>
+                        <button className='mute'>👍</button>
+                        <button className='like'>3</button>
+                        <button className='dislike'>4</button>
+                        <button className='add'>5</button>
+                        
+                    </div>
+                    
                 </div>
             </div>
+        </div>
+            
         )
     }
 }
 export default VideoBox;
+// handleClick = () => {
+//     console.log('klik')
+//     //e.preventDefault()
+//     console.log(this.state.children)
+//     if (this.state.children===this.props.children){
+//         this.setState({
+//             children:''
+//         });
+//     } else {
+//         this.setState({
+//             children: this.props.children
+//         });
+//     }
+// }

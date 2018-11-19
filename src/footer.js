@@ -20,14 +20,14 @@ class Footer extends Component {
                     <li></li>
                 </ul>
                 <ul>
-                    <il></il>
-                    <il></il>
-                    <il></il>
-                    <il></il>
-                    <il></il>
-                    <il></il>
-                    <il></il>
-                    <il></il>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
                 </ul>
             </footer>
         )

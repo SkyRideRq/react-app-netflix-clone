@@ -8,8 +8,11 @@ class App extends Component {
   render() {
     return (
       <div>
-        <NavBar/>
-        <VideoContainer/>
+        <header>
+          <NavBar/>
+        </header>
+        <div style={{height:'200px', width:'100%'}}></div>
+        <VideoContainer category="ulubione"/>
         <Footer/>
       </div>
     )

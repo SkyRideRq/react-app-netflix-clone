@@ -3,7 +3,9 @@ class NavBar extends Component {
     render () {
         return (
             <nav>
-                <img src="../img/facebook-icon.png" alt="facebook"></img>
+                <a href="index"> 
+                    <img src="../img/facebook-icon.png" alt="youtube collection"></img>
+                </a>
                 <ul>
                     <li>Strona główna</li>
                     <li>Filmy</li>

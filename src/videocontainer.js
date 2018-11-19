@@ -6,46 +6,65 @@ class VideoContainer extends Component {
     constructor(props) {
         super(props);
         this.state = {
-           videolist: videolist
+           videolist: videolist,
+           
         };
     }
-    handleMouseOver = (e) => {
-        e.preventDefault();
-        e.target.width = '400px';
-        e.target.height = '200px'
-    }
-    handleMouseOut = (e) => {
-        e.preventDefault();
-        e.target.width = '200px';
-        e.target.height = '100px'
-    }
-    handleClick = (e) => {
-        e.preventDefault();
-        console.log('clik')
-        e.target.width = '100vw';
-        e.target.height = '100vh'
+    handleClick = () => {
+        
+        
     }
     render () {
+        console.log(this)
         const videolist= this.state.videolist.map( (e, i) => {
             return (
-                <div 
-                    onMouseOver={this.handleMouseOver}
-                    onMouseOut={this.handleMouseOut}
-                    onClick={this.handleClick}
-                >
-                    <VideoBox 
-                    key={i} 
-                    videoId={e.videoId} 
-                    opts={e.opts} 
+                <div>
+                    <VideoBox
+                    child={this.state.child}
+                    key={i}
                     desc={e.desc} 
-                    title={e.title}/>
+                    title={e.title}
+                    img={e.img}>
+                        <iframe 
+                            style={{position: 'fixed',
+                            left: '0',
+                            top:'0',
+                            zIndex:'34',
+                            background: '#201D1E',
+                            padding: '10px 0',
+                            width: '100%',
+                            height:'100%'}}
+                            src={"https://www.youtube.com/embed/"+e.videoId} 
+                            autoPlay={1} 
+                            frameBorder="0"
+                        ></iframe>
+                        <p 
+                            onClick={this.handleClick}
+                            style={{position: 'fixed',
+                            opacity: '1',
+                            left: '0',
+                            top:'0',
+                            zIndex:'35',
+                            background: '#201D1E',
+                            padding: '10px 0',
+                            width:'150px',
+                            borderRadius: '15px',
+                            textAlign:'center',
+                            padding: '25px'
+                            }}
+                        >Zamknij</p>
+                    </VideoBox>
                 </div>
             )
         })
         return (
-            <div className='VideoContainer'>
-                {videolist}
+            <div>
+                <h1>{this.props.category}</h1>
+                <div className='VideoContainer'>
+                    {videolist}
+                </div>
             </div>
+            
         )
     }
 }
