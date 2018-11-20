@@ -1,10 +1,22 @@
 import React, { Component } from 'react';
 class NavBar extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+           text: 'Szukaj',
+        };
+    }
+    handleChange = (e) => {
+        let text = e.target.value;
+        this.setState({
+            text:text
+        });
+    }
     render () {
         return (
             <nav>
                 <a href="index"> 
-                    <img src="../img/facebook-icon.png" alt="youtube collection"></img>
+                    <img src="../img/logo_placeholder.png" alt="youtube collection"></img>
                 </a>
                 <ul>
                     <li>Strona główna</li>
@@ -12,7 +24,12 @@ class NavBar extends Component {
                     <li>Filmiki</li>
                     <li>ostatnio dodane</li>
                     <li>moja lista</li>
-                    <li>szukaj</li>
+                </ul>
+                <input 
+                    value={this.state.text} 
+                    onChange={this.handleChange}>
+                </input>
+                <ul className='right'>
                     <li>dzieci</li>
                     <li>powiadomienia</li>
                     <li>profile</li>

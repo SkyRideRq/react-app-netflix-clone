@@ -9,9 +9,15 @@ class VideoContainer extends Component {
            videolist: this.props.videolist,
         };
     }
-    
+componentDidMount () {
+
+}
+    scroll = (e) => {
+       
+    }
+
+
     render () {
-        
         const videolist= this.state.videolist.map( (e, i) => {
             return (
                 <div>
@@ -28,6 +34,14 @@ class VideoContainer extends Component {
         })
         return (
             <div>
+                <div className="paddles">
+                    <button className="left-paddle paddle" onClick={this.scroll}>
+                        〈
+                    </button>
+                    <button className="right-paddle paddle">
+                        〉
+                    </button>
+                </div>
                 <h1>{this.props.category}</h1>
                 <div className='VideoContainer'>
                     {videolist}

@@ -5,6 +5,7 @@ import VideoContainer from './videocontainer';
 import NavBar from './navbar';
 import Footer from './footer';
 import videolist from './videolist'
+import Hero from './hero';
 
 class App extends Component {
   render() {
@@ -13,7 +14,7 @@ class App extends Component {
         <header>
           <NavBar/>
         </header>
-        <div style={{height:'200px', width:'100%'}}></div>
+        <Hero title={videolist[0].title} subtitle={"Watch funny kitty video now!"} desc={videolist[0].desc}/>
         <VideoContainer category="ulubione" videolist={videolist}/>
         <VideoContainer category="dokumentalne" videolist={videolist}/>
         <VideoContainer category="sci-fi" videolist={videolist}/>
