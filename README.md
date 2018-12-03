@@ -1,3 +1,13 @@
+## Basics
+
+!!WORK IN PROGRESS!!
+
+Simple React app created for fun.
+Goal here is to make app that looks like Netflix.
+
+
+Nothing special to see here :)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
